@@ -3,16 +3,19 @@ var minuto = 0;
 var hora = 0;
 var timer;
 
-
 function atualizarTexto() {
     let h = document.getElementsByTagName("h1")[0]
-    h.innerHTML = minuto + " : " + segundo;
-    if(segundo > 59){
+    h.innerHTML = hora + " : " + minuto + " : " + segundo;
+    if(segundo == 60){
         minuto++;
         segundo = 0 
-    }else{ 
-    h.innerHTML = minuto + " : " + segundo;
-    segundo++
+    }if(minuto == 60){
+        hora++;
+        minuto = 0;
+    }
+    else{
+        h.innerHTML = hora + " : " + minuto + " : " + segundo;
+        segundo++;
     }
 }
 
@@ -22,6 +25,8 @@ function iniciar() {
 
 function parar() {
     clearInterval(timer)
+    timer.isOn = false
+
 }
 
 function limpar() {
