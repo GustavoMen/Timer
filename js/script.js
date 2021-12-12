@@ -3,6 +3,9 @@ var minuto = 0;
 var hora = 0;
 var timer;
 
+let h = document.getElementsByTagName("h1")[0]
+h.innerHTML = hora + " : " + minuto + " : " + segundo;
+
 function atualizarTexto() {
     let h = document.getElementsByTagName("h1")[0]
     h.innerHTML = hora + " : " + minuto + " : " + segundo;
@@ -20,8 +23,8 @@ function atualizarTexto() {
 }
 
 function iniciar() {
-   timer = setInterval (atualizarTexto , 100)
-}
+   timer = setInterval (atualizarTexto , 1000)
+} 
 
 function parar() {
     clearInterval(timer)
@@ -30,5 +33,12 @@ function parar() {
 }
 
 function limpar() {
-    clearTimeout(timer)
+    clearInterval(timer)
+    timer.isOn = false
+    segundo = 0;
+    minuto = 0;
+    hora = 0;
+    timer;
+    let h = document.getElementsByTagName("h1")[0]
+    h.innerHTML = hora + " : " + minuto + " : " + segundo;
 }
