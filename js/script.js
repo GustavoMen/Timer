@@ -3,12 +3,16 @@ var minuto = 0;
 var hora = 0;
 var timer;
 
-let h = document.getElementsByTagName("h1")[0]
-h.innerHTML = hora + " : " + minuto + " : " + segundo;
+let h = document.getElementById("counter")
+h.innerHTML = `<h1 class="counterContent">${hora}  :  ${minuto}  : ${segundo}`
+
+// Funçao para ter dois digitos
+function atualizarDigito(){}
+// a fazer
 
 function atualizarTexto() {
-    let h = document.getElementsByTagName("h1")[0]
-    h.innerHTML = hora + " : " + minuto + " : " + segundo;
+    let h = document.getElementById("counter")
+    h.innerHTML = `<h1 class="counterContent">${hora}  :  ${minuto}  : ${segundo}`
     if(segundo == 60){
         minuto++;
         segundo = 0 
@@ -17,7 +21,7 @@ function atualizarTexto() {
         minuto = 0;
     }
     else{
-        h.innerHTML = hora + " : " + minuto + " : " + segundo;
+        h.innerHTML = `<h1 class="counterContent">${hora}  :  ${minuto}  : ${segundo}`
         segundo++;
     }
 }
@@ -39,6 +43,6 @@ function limpar() {
     minuto = 0;
     hora = 0;
     timer;
-    let h = document.getElementsByTagName("h1")[0]
+    let h = document.getElementById("counter")
     h.innerHTML = hora + " : " + minuto + " : " + segundo;
 }

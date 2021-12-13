@@ -5,13 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="./css/style.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Titulo</h1>
-    <input onclick="iniciar()" type="submit" value= "iniciar">
-    <input onclick="parar()" type="submit" value= "parar">
-    <input onclick="limpar()" type="submit" value= "limpar">
-
+<div class="container">
+    <div id="counter" class="counter">
+        </div>
+    <input class="btn startbtn" onclick="iniciar()" type="submit" value= "iniciar">
+    <input class="btn stopbtn" onclick="parar()" type="submit" value= "parar">
+    <input class="btn clearbtn" onclick="limpar()" type="submit" value= "limpar">
+</div>
     <script src="./js/script.js"></script>
 </body>
 </html>
