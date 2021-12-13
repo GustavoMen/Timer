@@ -44,5 +44,4 @@ function limpar() {
     hora = 0;
     timer;
     let h = document.getElementById("counter")
-    h.innerHTML = hora + " : " + minuto + " : " + segundo;
-}
+    h.innerHTML = `<h1 class="counterContent">${hora}  :  ${minuto}  : ${segundo}`}
